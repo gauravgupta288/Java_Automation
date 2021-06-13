@@ -8,11 +8,12 @@ import com.MiniBank.PageObject.LoginPage;
 
 public class TestLogin extends BaseTest{
 	LoginPage loginPage; 
+	
 	@Test
 	public void loginTest() {
 		loginPage = new LoginPage(BaseTest.driver);
-		loginPage.setUserName("mngr333727");
-		loginPage.setPassword("UqUbypa");
+		loginPage.setUserName(userName);
+		loginPage.setPassword(password);
 		loginPage.clickLogin();
 		AssertJUnit.assertEquals("Guru99 Bank Manager HomePage", driver.getTitle(), "Test Failed, Home Page title does not match");
 	}
