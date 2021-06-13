@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.MiniBank.TestScripts.Testlogin">
+      <class name="com.MiniBank.TestScripts.TestLogin">
         <methods>
-          <include name="setup"/>
           <include name="teardown"/>
-          <include name="loginTest"/>
+          <include name="setup"/>
+          <include name="validateHomePageFields"/>
         </methods>
-      </class> <!-- com.MiniBank.TestScripts.Testlogin -->
+      </class> <!-- com.MiniBank.TestScripts.TestLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
