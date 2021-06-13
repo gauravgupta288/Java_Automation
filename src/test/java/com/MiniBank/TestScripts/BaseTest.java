@@ -31,11 +31,9 @@ public class BaseTest {
 		Logger.getLogger("Testlog.txt");
 		String log4jConfigFile = System.getProperty("user.dir") + File.separator + "log4j.properties";
 				PropertyConfigurator.configure(log4jConfigFile);
-		
 	}
 	@AfterMethod
 	public void teardown() {
 		driver.quit();
-		
 	}
 }
