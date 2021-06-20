@@ -5,6 +5,7 @@
     <classes>
       <class name="com.MiniBank.TestScripts.TestLogin">
         <methods>
+          <include name="loginTest"/>
           <include name="teardown"/>
           <include name="setup"/>
           <include name="validateHomePageFields"/>

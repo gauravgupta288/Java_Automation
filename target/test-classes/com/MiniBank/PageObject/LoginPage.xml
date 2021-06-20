@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elements>
+    <Element name="userID">
+   	 <param type="name" value="uid"/>
+    </Element>
+    <Element name="password">
+   	 <param type="name" value="password"/>
+    </Element>
+    <Element name="btnLogin">
+   	 <param type="name" value="btnLogin"/>
+    </Element>
+    
+</Elements>
