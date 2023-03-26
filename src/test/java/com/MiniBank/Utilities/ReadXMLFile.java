@@ -16,13 +16,13 @@ import org.w3c.dom.Element;
 public class ReadXMLFile {
 	
 	public HashMap<String, String> parseXML(String filname) {
-		HashMap<String, String> hMap = new  HashMap<String, String>();
+		HashMap<String, String> hMap = new  HashMap<>();
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 	          // parse XML file
 	          DocumentBuilder db = dbf.newDocumentBuilder();
-	          Document doc = db.parse(new File("src/test/java/com/MiniBank/PageObject/"+filname));
+	          Document doc = db.parse(new File("Resources/"+filname));
 	          doc.getDocumentElement().normalize();
 	          // get <staff>
 	          NodeList list = doc.getElementsByTagName("Element");

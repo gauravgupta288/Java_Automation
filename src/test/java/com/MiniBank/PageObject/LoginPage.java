@@ -19,7 +19,7 @@ public class LoginPage extends BasePage{
 		readXML = new ReadXMLFile();
 		hMap = readXML.parseXML("LoginPage.xml");
 	}
-	@FindBy(name= "id") WebElement txtUserName;
+	@FindBy(name= "uid") WebElement txtUserName;
 	@FindBy(name="password") WebElement txtPassword;
 	@FindBy(name="btnLogin") WebElement btnLogin;
 	

@@ -17,12 +17,14 @@ public class BaseTest {
 	
 	String userName = readConfig.getBaseUserName();
 	String password = readConfig.getBasePassword();
+
+	String incorrectPass = readConfig.getInvalidPassword();
 	public static WebDriver  driver;
 	static Logger logger = Logger.getLogger(BaseTest.class);
 
 	@BeforeMethod
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver", "/Users/gaurav.gupta/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(baseURL);

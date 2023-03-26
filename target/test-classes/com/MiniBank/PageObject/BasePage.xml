@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Elements>
-    <Element name="newCustomer">
-   	 <param type="xpath" value="//a[text()='New Customer']"/>
-    </Element>
-    <Element name="newCustomer1">
-   	 <param type="xpath" value="//a[text()='New Customer']"/>
-    </Element>
-</Elements>

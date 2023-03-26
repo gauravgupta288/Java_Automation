@@ -34,6 +34,9 @@ public class ReadConfig {
 	public String getBasePassword() {
 		return 	pro.getProperty("password");
 	}
-	
+
+	public String getInvalidPassword() {
+		return 	pro.getProperty("invalidPassword");
+	}
 
 }
