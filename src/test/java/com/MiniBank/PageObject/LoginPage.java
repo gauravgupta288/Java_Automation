@@ -22,7 +22,11 @@ public class LoginPage extends BasePage{
 	@FindBy(name= "uid") WebElement txtUserName;
 	@FindBy(name="password") WebElement txtPassword;
 	@FindBy(name="btnLogin") WebElement btnLogin;
-	
+
+	@FindBy(name="btnReset") WebElement btnReset;
+
+	@FindBy(xpath="//a[text()='Log out']") WebElement logOut;
+
 	public void setUserName(String username) {
 		txtUserName.clear();
 		txtUserName.sendKeys(username);
@@ -33,5 +37,21 @@ public class LoginPage extends BasePage{
 	}
 	public void clickLogin() {
 		btnLogin.click();
+	}
+
+	public void clickReset() {
+		btnReset.click();
+	}
+
+	public String getUserIdTextfieldText() {
+		return txtUserName.getText();
+	}
+
+	public String getPasswordTextfieldText() {
+		return txtPassword.getText();
+	}
+
+	public void clickLogout() {
+		logOut.click();
 	}
 }

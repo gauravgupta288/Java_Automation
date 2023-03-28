@@ -2,8 +2,11 @@ package com.MiniBank.TestScripts;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -22,6 +25,9 @@ public class BaseTest {
 	public static WebDriver  driver;
 	static Logger logger = Logger.getLogger(BaseTest.class);
 
+	ExtentReports extent = new ExtentReports();
+	ExtentSparkReporter spark = new ExtentSparkReporter("login.html");
+
 	@BeforeMethod
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
@@ -33,9 +39,17 @@ public class BaseTest {
 		Logger.getLogger("Testlog.txt");
 		String log4jConfigFile = System.getProperty("user.dir") + File.separator + "log4j.properties";
 				PropertyConfigurator.configure(log4jConfigFile);
+
+
+
 	}
 	@AfterMethod
 	public void teardown() {
 		driver.quit();
+	}
+
+	public String getAlertText(){
+		Alert alert = driver.switchTo().alert();
+		return alert.getText();
 	}
 }
