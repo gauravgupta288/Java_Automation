@@ -1,4 +1,4 @@
-package com.MiniBank.Utilities;
+package com.OrangeHRM.Utilities;
 
 public class SeleniumHelper {
 

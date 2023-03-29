@@ -1,4 +1,4 @@
-package com.MiniBank.Utilities;
+package com.OrangeHRM.Utilities;
 
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;

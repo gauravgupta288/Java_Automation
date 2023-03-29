@@ -1,4 +1,4 @@
-package com.MiniBank.TestScripts;
+package com.OrangeHRM.TestScripts;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import com.MiniBank.Utilities.ReadConfig;
+import com.OrangeHRM.Utilities.ReadConfig;
 
 public class BaseTest {
 	ReadConfig readConfig = new ReadConfig();

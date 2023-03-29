@@ -1,4 +1,4 @@
-package com.MiniBank.PageObject;
+package com.OrangeHRM.PageObject;
 
 
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.MiniBank.Utilities.ReadXMLFile;
+import com.OrangeHRM.Utilities.ReadXMLFile;
 
 public class LoginPage extends BasePage{
 	ReadXMLFile readXML;
@@ -19,13 +19,17 @@ public class LoginPage extends BasePage{
 		readXML = new ReadXMLFile();
 		hMap = readXML.parseXML("LoginPage.xml");
 	}
-	@FindBy(name= "uid") WebElement txtUserName;
+	@FindBy(name= "username") WebElement txtUserName;
 	@FindBy(name="password") WebElement txtPassword;
-	@FindBy(name="btnLogin") WebElement btnLogin;
+	@FindBy(xpath="//button[text()= ' Login ']") WebElement btnLogin;
+
+	@FindBy(xpath="//p[text()= 'Invalid credentials']") WebElement invalidCredErrorMessage;
 
 	@FindBy(name="btnReset") WebElement btnReset;
 
-	@FindBy(xpath="//a[text()='Log out']") WebElement logOut;
+	@FindBy(className="oxd-userdropdown-name") WebElement userDropDown;
+
+	@FindBy(xpath="//*[text()= 'Logout']") WebElement logout;
 
 	public void setUserName(String username) {
 		txtUserName.clear();
@@ -51,7 +55,23 @@ public class LoginPage extends BasePage{
 		return txtPassword.getText();
 	}
 
-	public void clickLogout() {
-		logOut.click();
+	public void clickuserDropDown() {
+		userDropDown.click();
+	}
+
+	public boolean isErrorMessagePresent(){
+		return invalidCredErrorMessage.isDisplayed();
+	}
+
+	public void clickLogout(){
+		logout.click();
+	}
+
+	public boolean userNameFieldPresent(){
+		return txtUserName.isDisplayed();
+	}
+
+	public boolean passwordFieldPresent(){
+		return txtPassword.isDisplayed();
 	}
 }

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.MiniBank.TestScripts.TestLogin">
+      <class name="com.OrangeHRM.TestScripts.TestLogin">
         <methods>
           <include name="loginTest"/>
           <include name="teardown"/>
           <include name="setup"/>
           <include name="validateHomePageFields"/>
         </methods>
-      </class> <!-- com.MiniBank.TestScripts.TestLogin -->
+      </class> <!-- com.OrangeHRM.TestScripts.TestLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,12 +1,11 @@
-package com.MiniBank.TestScripts;
+package com.OrangeHRM.TestScripts;
 
 
-import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.MiniBank.PageObject.HomePage;
-import com.MiniBank.PageObject.LoginPage;
+import com.OrangeHRM.PageObject.HomePage;
+import com.OrangeHRM.PageObject.LoginPage;
 
 public class TestLogin extends BaseTest{
 	LoginPage loginPage; 
@@ -18,7 +17,7 @@ public class TestLogin extends BaseTest{
 		loginPage.setUserName(userName);
 		loginPage.setPassword(password);
 		loginPage.clickLogin();
-		Assert.assertEquals(driver.getTitle(), "Guru99 Bank Manager HomePage", "Test Failed, Home Page title does not match");
+		Assert.assertEquals(driver.getTitle(), "OrangeHRM", "Test Failed, Home Page title does not match");
 	}
 	
 	@Test
@@ -30,9 +29,8 @@ public class TestLogin extends BaseTest{
 		
 		//Validate below links are present
 		homePage = new HomePage(BaseTest.driver);
-		homePage.deleteCustomerLinkIsPresent();
-		homePage.editCustomerLinkIsPresent();
-		homePage.newCustomerLinkIsPresent();
+		homePage.leaveLinkIsPresent();
+		homePage.adminLinkPresent();
 	}
 
 	@Test
@@ -42,8 +40,7 @@ public class TestLogin extends BaseTest{
 		loginPage.setPassword(incorrectPass);
 		loginPage.clickLogin();
 
-		String alertText = getAlertText();
-		Assert.assertEquals(alertText, "User or Password is not valid", "alert text does not match");
+		Assert.assertTrue(loginPage.isErrorMessagePresent(), "User or Password is not valid");
 	}
 
 	@Test
@@ -66,13 +63,13 @@ public class TestLogin extends BaseTest{
 		loginPage.setUserName(userName);
 		loginPage.setPassword(password);
 		loginPage.clickLogin();
-		Assert.assertEquals(driver.getTitle(), "Guru99 Bank Manager HomePage", "Test Failed, Home Page title does not match");
 
 		//logout
+		loginPage.clickuserDropDown();
 		loginPage.clickLogout();
 
-		String logoutText = getAlertText();
-		Assert.assertEquals(logoutText, "You Have Succesfully Logged Out!!", "Failed to logout from app");
-
+		Assert.assertTrue(loginPage.passwordFieldPresent(), "Failed to logout");
+		Assert.assertTrue(loginPage.userNameFieldPresent(), "Failed to logout");
 	}
+
 }
